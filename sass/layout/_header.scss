@@ -45,5 +45,9 @@
     @include m.respond(tab-land) {
       gap: 1.5rem;
     }
+
+    p {
+      padding-inline: 0.75rem;
+    }
   }
 }

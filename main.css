@@ -221,6 +221,9 @@ h3 {
     gap: 1.5rem;
   }
 }
+.header__description p {
+  padding-inline: 0.75rem;
+}
 
 main .section-fields {
   max-width: 69.375rem;
