@@ -1,6 +1,5 @@
 const btnNext = document.querySelector("#right-arrow"),
   btnPrev = document.querySelector("#left-arrow"),
-  slides = document.querySelectorAll(".slide"),
   carousel = document.querySelector(".section-my-work__carousel"),
   firstImg = document.querySelector(".slide--1"),
   arrowIcons = document.querySelectorAll(".arrow");
@@ -52,34 +51,3 @@ carousel.addEventListener("touchmove", dragging);
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
 carousel.addEventListener("touchend", dragStop);
-
-// let curSlide = 0;
-// const maxSlide = slides.length;
-// const goToSlide = function (slide) {
-//   slides.forEach((s, i) => (s.style.transform = `translateX(calc(${100 * (i - curSlide)}%)`));
-// };
-
-// goToSlide(0);
-
-// const nextSlide = function () {
-//   if (curSlide === maxSlide - 3) {
-//     curSlide = 0;
-//   } else {
-//     curSlide++;
-//   }
-
-//   goToSlide(curSlide);
-// };
-
-// const prevSlide = function () {
-//   if (curSlide === -2) {
-//     curSlide = maxSlide - 5;
-//   } else {
-//     curSlide--;
-//   }
-
-//   goToSlide(curSlide);
-// };
-
-// btnNext.addEventListener("click", nextSlide);
-// btnPrev.addEventListener("click", prevSlide);
