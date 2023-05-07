@@ -1,0 +1,25 @@
+@use "../mixins" as m;
+
+.footer {
+  @include m.main-content;
+
+  @include m.flex-center(0, row);
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  @include m.respond(tab-port) {
+    margin-bottom: 3.5rem;
+  }
+
+  @include m.respond(tab-land) {
+    margin-bottom: 4rem;
+  }
+
+  &__logo {
+    height: 3rem;
+
+    @include m.respond(tab-port) {
+      height: auto;
+    }
+  }
+}

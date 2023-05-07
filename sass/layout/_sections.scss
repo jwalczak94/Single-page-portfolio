@@ -1,0 +1,309 @@
+@use "../mixins" as m;
+
+main {
+  .section-fields {
+    @include m.main-content;
+
+    display: grid;
+    grid-template-areas:
+      "graphic graphic"
+      "ux apps"
+      "ilustrations ilustrations"
+      "photography photography"
+      "graphics graphics";
+    gap: 1.5rem;
+
+    margin-bottom: 6.25rem;
+
+    @include m.respond(tab-port) {
+      grid-template-areas:
+        "graphic graphic ux apps"
+        "graphic graphic ilustrations ilustrations"
+        "photography photography graphics graphics";
+
+      grid-template-rows: 182px 158px 182px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 7.5rem;
+    }
+
+    @include m.respond(tab-land) {
+      grid-template-areas:
+        "graphic graphic ux apps photography photography"
+        "graphic graphic ilustrations ilustrations graphics graphics";
+      grid-template-rows: 182px 158px;
+      grid-template-columns: repeat(6, 1fr);
+      margin-bottom: 8.5rem;
+    }
+
+    &__box {
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: left;
+
+      img {
+        margin-left: auto;
+      }
+
+      span {
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+    }
+
+    &__box:nth-of-type(1) {
+      grid-area: graphic;
+      background-color: var(--blue);
+
+      img {
+        margin-bottom: 6rem;
+      }
+    }
+
+    &__box:nth-of-type(2) {
+      grid-area: ux;
+      background-color: var(--yellow);
+    }
+
+    &__box:nth-of-type(2),
+    &__box:nth-of-type(3),
+    &__box:nth-of-type(5),
+    &__box:nth-of-type(6) {
+      img {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &__box:nth-of-type(3) {
+      grid-area: apps;
+      background-color: var(--pink);
+    }
+
+    &__box:nth-of-type(4) {
+      grid-area: ilustrations;
+      background-color: var(--red);
+
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__box:nth-of-type(5) {
+      grid-area: photography;
+      background-color: var(--cyan);
+    }
+
+    &__box:nth-of-type(6) {
+      grid-area: graphics;
+      background-color: var(--purple);
+
+      @include m.respond(tab-land) {
+        img {
+          margin-bottom: 1rem !important;
+        }
+      }
+    }
+  }
+
+  .section-introduction {
+    display: grid;
+    align-items: center;
+    gap: 2.5rem;
+
+    padding-inline: 1.5rem;
+    margin-bottom: 6.25rem;
+
+    @include m.respond(phone) {
+      grid-template-columns: 47% 44%;
+
+      padding-inline: 0;
+      margin-left: -2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    @include m.respond(tab-port) {
+      gap: 4rem;
+      margin-bottom: 7.5rem;
+    }
+
+    @include m.respond(tab-land) {
+      grid-template-columns: 40% 48%;
+      @include m.main-content;
+      gap: 0;
+      padding-right: 0;
+      margin-bottom: 5.5rem;
+
+      justify-content: space-between;
+    }
+
+    &__photo {
+      padding-inline: 1rem;
+
+      @include m.respond(phone) {
+        padding-inline: 0;
+
+        img {
+          object-fit: contain;
+          height: 100%;
+
+          @include m.respond(tab-land) {
+            max-width: 445px;
+          }
+        }
+      }
+    }
+
+    &__description {
+      @include m.flex-center(1.5rem, column);
+
+      @include m.respond(phone) {
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      @include m.respond(tab-port) {
+        max-width: 33.75rem;
+      }
+
+      @include m.respond(tab-land) {
+        gap: 2rem;
+      }
+    }
+  }
+
+  .section-my-work {
+    @include m.flex-center(2rem, column);
+    margin-bottom: 6.25rem;
+    overflow: hidden;
+    max-width: 90rem;
+    margin-inline: auto;
+
+    @include m.respond(tab-port) {
+      gap: 3.5rem;
+      margin-bottom: 7.5rem;
+    }
+
+    @include m.respond(tab-land) {
+      margin-bottom: 5.5rem;
+    }
+
+    &__carousel {
+      height: 180px;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      font-size: 0;
+
+      @include m.respond(phone) {
+        height: 360px;
+      }
+
+      &.dragging {
+        cursor: grab;
+        scroll-behavior: auto;
+
+        .slide {
+          pointer-events: none;
+        }
+      }
+
+      .slide {
+        display: inline-block;
+        border-radius: 8px;
+        height: 180px;
+        width: 270px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin-left: 30px;
+        }
+
+        @include m.respond(phone) {
+          height: 360px;
+          width: 540px;
+        }
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &__arrows {
+      @include m.flex-center(1rem, row);
+      justify-content: center;
+
+      &__container {
+        border: none;
+        display: grid;
+        place-content: center;
+        background-color: var(--black);
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+
+        cursor: pointer;
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+
+  .section-book {
+    @include m.main-content;
+    margin-bottom: 2.5rem;
+
+    @include m.respond(tab-port) {
+      margin-bottom: 3.5rem;
+    }
+
+    > div {
+      @include m.flex-center(1.5rem, column);
+
+      background-color: var(--black);
+      border-radius: 10px;
+      padding: 3rem 1.5rem;
+
+      @include m.respond(tab-port) {
+        padding: 3.5rem 4.75rem 4rem 4.75rem;
+        gap: 1.625rem;
+      }
+
+      @include m.respond(tab-land) {
+        padding: 5rem 6rem 5rem 4.125rem;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+    }
+
+    &__description {
+      @include m.flex-center(1.5rem, column);
+
+      @include m.respond(tab-port) {
+        gap: 1.625rem;
+      }
+
+      @include m.respond(tab-land) {
+        align-items: flex-start;
+        max-width: 33.75rem;
+        text-align: left;
+      }
+
+      h2,
+      p {
+        color: var(--white);
+      }
+    }
+  }
+}

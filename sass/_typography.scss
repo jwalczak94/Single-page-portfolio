@@ -1,0 +1,24 @@
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.26;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--black);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 1.8099rem + 1.8779vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.625rem, 1.3169rem + 1.3146vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.625rem, 1.2672rem + 1.5267vw, 2rem);
+}

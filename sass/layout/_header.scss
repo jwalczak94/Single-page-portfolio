@@ -1,0 +1,49 @@
+@use "../mixins" as m;
+
+.header {
+  @include m.main-content;
+
+  margin-bottom: 1.5rem;
+
+  @include m.respond(tab-port) {
+    margin-bottom: 4rem;
+  }
+
+  @include m.respond(tab-land) {
+    margin-bottom: 5rem;
+  }
+
+  &__nav {
+    @include m.flex-center(0, row);
+    justify-content: space-between;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+
+    @include m.respond(tab-port) {
+      padding-top: 2.125rem;
+      margin-bottom: 4rem;
+    }
+
+    &__logo {
+      height: 3rem;
+
+      @include m.respond(tab-port) {
+        height: auto;
+      }
+    }
+  }
+
+  &__description {
+    @include m.flex-center(1rem, column);
+    max-width: 752px;
+    margin-inline: auto;
+
+    @include m.respond(tab-port) {
+      gap: 1.625rem;
+    }
+
+    @include m.respond(tab-land) {
+      gap: 1.5rem;
+    }
+  }
+}

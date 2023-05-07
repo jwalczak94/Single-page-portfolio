@@ -1,0 +1,82 @@
+@use "mixins" as m;
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html {
+  min-height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.17;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+
+* {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--brown);
+
+  font-family: var(--ff-body);
+  font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.55;
+
+  height: 100%;
+
+  text-align: center;
+}

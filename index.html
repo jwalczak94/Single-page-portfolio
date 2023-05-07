@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Frontend Mentor | Single-page design portfolio</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__nav">
+        <img src="./assets/logo.svg" alt="" aria-hidden="true" class="header__nav__logo" />
+        <a href="#" class="btn btn-dark">Free Consultation</a>
+      </div>
+
+      <div class="header__description">
+        <h1>Design solutions made easy</h1>
+        <p>
+          With over ten years of experience in various design disciplines, I’m your one-stop shop
+          for your design needs.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-fields">
+        <div class="section-fields__box">
+          <img src="./assets/pattern-graphic-design.svg" alt="" aria-hidden="true" />
+          <span>Graphic Design</span>
+        </div>
+
+        <div class="section-fields__box">
+          <img src="./assets/pattern-ui-ux.svg" alt="" aria-hidden="true" />
+          <span>UI/UX</span>
+        </div>
+
+        <div class="section-fields__box">
+          <img src="./assets/pattern-apps.svg" alt="" aria-hidden="true" />
+          <span>Apps</span>
+        </div>
+
+        <div class="section-fields__box">
+          <img src="./assets/pattern-photography.svg" alt="" aria-hidden="true" />
+          <span>Photography</span>
+        </div>
+
+        <div class="section-fields__box">
+          <img src="./assets/pattern-illustrations.svg" alt="" aria-hidden="true" />
+          <span>Illustrations</span>
+        </div>
+
+        <div class="section-fields__box">
+          <img src="./assets/pattern-motion-graphics.svg" alt="" aria-hidden="true" />
+          <span>Motion Graphics</span>
+        </div>
+      </section>
+
+      <section class="section-introduction">
+        <div class="section-introduction__photo">
+          <img src="./assets/image-amy.webp" alt="Photo fo Amy" />
+        </div>
+        <div class="section-introduction__description">
+          <h2>I’m Amy, and I’d love to work on your next project</h2>
+          <p>
+            I love working with others to create beautiful design solutions. I’ve designed
+            everything from brand illustrations to complete mobile apps. I’m also handy with a
+            camera!
+          </p>
+          <a href="#" class="btn btn-light">Free Consultation</a>
+        </div>
+      </section>
+
+      <section class="section-my-work">
+        <h2>My Work</h2>
+        <div class="section-my-work__carousel">
+          <div class="slide slide--1">
+            <img src="./assets/image-slide-1.jpg" alt="My Work - Slide 1" draggable="false" />
+          </div>
+          <div class="slide slide--2">
+            <img src="./assets/image-slide-2.jpg" alt="My Work - Slide 2" draggable="false" />
+          </div>
+          <div class="slide slide--3">
+            <img src="./assets/image-slide-3.jpg" alt="My Work - Slide 3" draggable="false" />
+          </div>
+          <div class="slide slide--4">
+            <img src="./assets/image-slide-4.jpg" alt="My Work - Slide 4" draggable="false" />
+          </div>
+          <div class="slide slide--5">
+            <img src="./assets/image-slide-5.jpg" alt="My Work - Slide 5" draggable="false" />
+          </div>
+        </div>
+
+        <div class="section-my-work__arrows">
+          <button
+            class="section-my-work__arrows__container arrow"
+            aria-label="press to see previous slide"
+            id="left-arrow">
+            <img src="./assets/icon-arrow-left.svg" alt="" aria-hidden="true" />
+          </button>
+          <button
+            class="section-my-work__arrows__container arrow"
+            aria-label="press to see next slide"
+            id="right-arrow">
+            <img src="./assets/icon-arrow-right.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </section>
+
+      <section class="section-book">
+        <div>
+          <div class="section-book__description">
+            <h3>Book a call with me</h3>
+            <p>
+              I’d love to have a chat to see how I can help you. The best first step is for us to
+              discuss your project during a free consultation. Then we can move forward from there.
+            </p>
+          </div>
+          <a href="#" class="btn btn-light">Free Consultation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="./assets/logo.svg" alt="" aria-hidden="true" class="footer__logo" />
+      <a href="#" class="btn btn-dark">Free Consultation</a>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+@use "mixins" as m;
+
+.btn {
+  display: inline-block;
+  border-radius: 1.75rem;
+  color: var(--cream);
+  font-size: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
+  font-weight: 700;
+  line-height: 2.75rem;
+  height: 2.75rem;
+  width: 176px;
+  text-align: center;
+
+  @include m.respond(tab-port) {
+    line-height: 3.5rem;
+    height: 3.5rem;
+    width: 228px;
+  }
+
+  &-dark {
+    background-color: var(--black);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--blue);
+      }
+    }
+  }
+
+  &-light {
+    background-color: var(--red);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--yellow);
+      }
+    }
+  }
+}
